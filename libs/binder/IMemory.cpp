@@ -88,6 +88,7 @@ public:
 #ifndef BINDER_COMPAT
     virtual uint32_t getOffset() const;
 #endif
+
 private:
     friend class IMemory;
     friend class HeapCache;
@@ -240,9 +241,9 @@ BpMemoryHeap::BpMemoryHeap(const sp<IBinder>& impl)
     : BpInterface<IMemoryHeap>(impl),
         mHeapId(-1), mBase(MAP_FAILED), mSize(0), mFlags(0),
 #ifndef BINDER_COMPAT
-	mOffset(0),
+        mOffset(0),
 #endif
-	mRealHeap(false)
+        mRealHeap(false)
 {
 //HERE!
 }
@@ -388,6 +389,7 @@ uint32_t BpMemoryHeap::getFlags() const {
     assertMapped();
     return mFlags;
 }
+
 #ifndef BINDER_COMPAT
 uint32_t BpMemoryHeap::getOffset() const {
     assertMapped();

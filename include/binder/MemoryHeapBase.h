@@ -65,8 +65,9 @@ public:
     virtual size_t      getSize() const;
     virtual uint32_t    getFlags() const;
 #ifndef BINDER_COMPAT
-    virtual uint32_t getOffset() const;
+    virtual uint32_t    getOffset() const;
 #endif
+
     const char*         getDevice() const;
     /* this closes this heap -- use carefully */
     void dispose();
